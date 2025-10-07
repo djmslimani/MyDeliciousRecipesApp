@@ -1,0 +1,51 @@
+# ------------------------------------
+# Miscellaneous
+# ------------------------------------
+*.class
+*.log
+*.swp
+.DS_Store
+
+# ------------------------------------
+# IDEs
+# ------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws/
+.vscode/    # Optional: track VS Code workspace settings if desired
+
+# ------------------------------------
+# Flutter/Dart/Pub related
+# ------------------------------------
+build/
+.dart_tool/
+/.dart_tool/*
+!.dart_tool/flutter_build/
+
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+coverage/
+generated_plugin_registrant.dart
+
+# ------------------------------------
+# Android
+# ------------------------------------
+.gradle/
+local.properties
+**/key.properties      # Signing keys (do NOT commit)
+**/*.jks               # Keystore files (do NOT commit)
+/android/app/debug
+/android/app/profile
+/android/app/release
+*.apk
+*.aar
+
+# ------------------------------------
+# Symbolication / Obfuscation
+# ------------------------------------
+app.*.symbols
+app.*.map.json

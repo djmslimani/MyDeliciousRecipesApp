@@ -1,0 +1,378 @@
+{
+    "language": "العربية",
+    "@language": {
+        "description": "The default language"
+    },
+    "search": "بحث",
+    "@search": {
+        "description": "To find something"
+    },
+    "refresh": "تحديث",
+    "@refresh": {
+        "description": ""
+    },
+    "settings": "الإعدادات",
+    "@settings": {
+        "description": ""
+    },
+    "about": "حول البرنامج",
+    "@about": {
+        "description": ""
+    },
+    "close": "إغلاق",
+    "@close": {
+        "description": ""
+    },
+    "add": "إضافة",
+    "@add": {
+        "description": ""
+    },
+    "searchfor": "البحث عن وصفة",
+    "@searchfor": {
+        "description": ""
+    },
+    "yes": "نعم",
+    "@yes": {
+        "description": ""
+    },
+    "no": "لا",
+    "@no": {
+        "description": ""
+    },
+    "passwordinfo": "هذا الرمز يُستخدم لحماية الوصفات من التعديل أو الحذف من شخص لا يُحسن استخدام البرنامج، ويمكن تعديله أو حذفه في أي وقت.",
+    "@passwordinfo": {
+        "description": ""
+    },
+    "enterpassword": "أدخل رمز الحماية",
+    "@enterpassword": {
+        "description": ""
+    },
+    "save": "حفظ",
+    "@save": {
+        "description": ""
+    },
+    "exitmessage": "هل تود الخروج من التطبيق؟",
+    "@exitmessage": {
+        "description": ""
+    },
+    "editordelete": "تعديل أو حذف",
+    "@editordelete": {
+        "description": ""
+    },
+    "delete": "حذف",
+    "@delete": {
+        "description": "delete"
+    },
+    "change": "تعديل",
+    "@change": {
+        "description": ""
+    },
+    "modifyordeletepasswordinfo": "لقد أضفت رمز الحماية بالفعل! إذا أردت تعديل الرمز اضغط على تعديل، وإذا أردت حذفه اضغط على حذف.",
+    "@modifyordeletepasswordinfo": {
+        "description": ""
+    },
+    "oldpassword": "رمز الحماية القديم",
+    "@oldpassword": {
+        "description": ""
+    },
+    "newpassword": "رمز الحماية الجديد",
+    "@newpassword": {
+        "description": ""
+    },
+    "cannotbeemty": "لا يمكن أن يكون فارغًا!",
+    "@cannotbeemty": {
+        "description": ""
+    },
+    "noresults": "لا توجد نتائج!",
+    "@noresults": {
+        "description": ""
+    },
+    "numberofresults": "عدد الوصفات المُتحصل عليها هو:",
+    "@numberofresults": {
+        "description": ""
+    },
+    "passwordadded": "تم إضافة رمز الحماية.",
+    "@passwordadded": {
+        "description": ""
+    },
+    "passwordchanged": "تم تعديل رمز الحماية.",
+    "@passwordchanged": {
+        "description": ""
+    },
+    "wrongpassword": "رمز الحماية القديم خطأ!",
+    "@wrongpassword": {
+        "description": ""
+    },
+    "passworddeleted": "تم حذف رمز الحماية.",
+    "@passworddeleted": {
+        "description": ""
+    },
+    "meals": "وجبات",
+    "@meals": {
+        "description": ""
+    },
+    "desserts": "حلويات",
+    "@desserts": {
+        "description": ""
+    },
+    "deliciousrecipes": "وصفاتي الشهية",
+    "@deliciousrecipes": {
+        "description": ""
+    },
+    "apppurpose": "هدف هذا البرنامج هو حفظ الوصفات المُعدة، لتسهيل الوصول إليها في أي وقت وأي مكان.",
+    "@apppurpose": {
+        "description": ""
+    },
+    "version": "النسخة",
+    "@version": {
+        "description": ""
+    },
+    "versionnumber": "نسخة البرنامج: 1.0.0.",
+    "@versionnumber": {
+        "description": ""
+    },
+    "releasedate": "تاريخ الصدور: مارس 2023.",
+    "@releasedate": {
+        "description": ""
+    },
+    "contact": "الاتصال",
+    "@contact": {
+        "description": ""
+    },
+    "contactemail": "يمكنكم التواصل عبر البريد الإلكتروني التالي:",
+    "@contactemail": {
+        "description": ""
+    },
+    "nopicture": "لم تقم باختيار صورة!",
+    "@nopicture": {
+        "description": ""
+    },
+    "chooserecipe": "نوع الوصفة",
+    "@chooserecipe": {
+        "description": ""
+    },
+    "recipeexists": "هذه الوصفة موجودة!",
+    "@recipeexists": {
+        "description": ""
+    },
+    "successfullysaved": "تم إضافة وصفة جديدة بنجاح.",
+    "@successfullysaved": {
+        "description": "successfully added."
+    },
+    "recipe": "الوصفة",
+    "@recipe": {
+        "description": "addarecipe"
+    },
+    "ingredients": "المكونات",
+    "@ingredients": {
+        "description": ""
+    },
+    "method": "طريقة التحضير",
+    "@method": {
+        "description": ""
+    },
+    "addapicture": "إضافة صورة",
+    "@addapicture": {
+        "description": ""
+    },
+    "imagesource": "حدد مصدر الصورة",
+    "@imagesource": {
+        "description": ""
+    },
+    "camera": "الكاميرا",
+    "@camera": {
+        "description": ""
+    },
+    "gallery": "المعرض",
+    "@gallery": {
+        "description": ""
+    },
+    "successfullychanged": "تم التعديل بنجاح.",
+    "@successfullychanged": {
+        "description": "successfully changed."
+    },
+    "changethepicture": "تعديل الصورة",
+    "@changethepicture": {
+        "description": ""
+    },
+    "deletemessage": "هل تريد حذف هذه الوصفة؟",
+    "@deletemessage": {
+        "description": ""
+    },
+    "preserverecipesmessage": "هل تريد الإحتفاظ بالوصفات الموجودة؟",
+    "@preserverecipesmessage": {
+        "description": ""
+    },
+    "successfullyDeleted": "تم الحذف بنجاح.",
+    "@successfullyDeleted": {
+        "description": "Successfully deleted."
+    },
+    "norecipetype": "لم تقم باختيار نوع الوصفة!",
+    "@norecipetype": {
+        "description": ""
+    },
+    "secuirity": "الأمان",
+    "@secuirity": {
+        "description": ""
+    },
+    "applanguage": "اللغة",
+    "@applanguage": {
+        "description": ""
+    },
+    "password": "رمز الحماية",
+    "@password": {
+        "description": ""
+    },
+    "arabiclanguage": "العربية",
+    "@arabiclanguage": {
+        "description": ""
+    },
+    "englishlanguage": "الإنجليزية",
+    "@englishlanguage": {
+        "description": ""
+    },
+    "frenchlanguage": "الفرنسية",
+    "@frenchlanguage": {
+        "description": ""
+    },
+    "internalstorage": "وحدة التخزين الداخلية",
+    "@internalstorage": {
+        "description": ""
+    },
+    "externalstorage": "وحدة التخزين الخارجية",
+    "@externalstorage": {
+        "description": ""
+    },
+    "emptyfolder": "مجلد فارغ.",
+    "@emptyfolder": {
+        "description": ""
+    },
+    "backup": "النسخ الإحتياطي",
+    "@backup": {
+        "description": ""
+    },
+    "restore": "الإستعادة",
+    "@restore": {
+        "description": ""
+    },
+    "unsupportedimagetype": "نوع الصورة غير مدعوم!",
+    "@unsupportedimagetype": {
+        "description": ""
+    },
+    "unsupportedfiletype": "نوع الملف غير مدعوم!",
+    "@unsupportedfiletype": {
+        "description": ""
+    },
+    "notavalidfile": "هذا الملف ليس ملفًا صالحًا!",
+    "@notavalidfile": {
+        "description": ""
+    },
+    "restorecompletedsuccessfully": "تمت الإستعادة بنجاح",
+    "@restorecompletedsuccessfully": {
+        "description": ""
+    },
+    "backupcompletedsuccessfully": "تم النسخ الإحتياطي بنجاح",
+    "@backupcompletedsuccessfully": {
+        "description": ""
+    },
+    "copyingpleasewait": "يتم النسخ، يرجى الإنتظار...",
+    "@copyingpleasewait": {
+        "description": ""
+    },
+    "restoringpleasewait": "يتم الإستعادة، يرجى الإنتظار...",
+    "@restoringpleasewait": {
+        "description": ""
+    },
+    "norecipetobackup": "لا توجد وصفات للنسخ!",
+    "@norecipetobackup": {
+        "description": ""
+    },
+    "cloudstorage": "التخزين السحابي",
+    "@cloudstorage": {
+        "description": ""
+    },
+    "localstorage": "التخزين المحلي",
+    "@localstorage": {
+        "description": ""
+    },
+    "backupinfo": "مسار النسخ الاحتياطي المحلي:",
+    "@backupinfo": {
+        "description": ""
+    },
+    "restoreinfo": "- بالنقر على زر الإستعادة ستنتقل إلى مجلد النسخ الإحتياطي الإفتراضي، وبعدها اختر النسخة الإحتياطية المراد استرجاعها. يمكنك أيضًا البحث في جهازك (التخزين الداخلي أو الخارجي) عن نسخة احتياطية أخرى.\n- يمكنك تغيير اسم النسخة الاحتياطية، ولكن احتفظ بالجزء .MyDeliciousRecipesBackup كما هو.",
+    "@restoreinfo": {
+        "description": ""
+    },
+    "themes": "الثيمات",
+    "@themes": {
+        "description": ""
+    },
+    "voicetyping": "الكتابة بالصوت",
+    "@voicetyping": {
+        "description": ""
+    },
+    "voicetypinginfo1": "- هذه الخاصية تتطلب الاتصال بالإنترنت.",
+    "@voicetypinginfo1": {
+        "description": ""
+    },
+    "voicetypinginfo2": "- في أعلى لوحة المفاتيح، انقر على رمز الميكروفون",
+    "@voicetypinginfo2": {
+        "description": ""
+    },
+    "voicetypinginfo3": " بعد ذلك، قل ما تريد كتابته.",
+    "@voicetypinginfo3": {
+        "description": ""
+    },
+    "voicetypinginfo4": "- إذا لم يكن رمز الميكروفون ظاهرًا على لوحة المفاتيح، اضغط على رمز الإعدادات",
+    "@voicetypinginfo4": {
+        "description": ""
+    },
+    "voicetypinginfo5": " اضغط على الكتابة بالصوت، ثم فعل استخدام الكتابة بالصوت. وسيظهر رمز الميكروفون على لوحة المفاتيح.",
+    "@voicetypinginfo5": {
+        "description": ""
+    },
+    "voicetypinginfo6": "- إذا لم يكن رمز الإعدادات ظاهرًا على لوحة المفاتيح، اضغط مع الاستمرار على رمز الفاصلة ',' وسيظهر رمز الإعدادات.",
+    "@voicetypinginfo6": {
+        "description": ""
+    },
+    "shareaspdf": "مشاركة (*.pdf)",
+    "@shareaspdf": {
+        "description": ""
+    },
+    "shareasappformat": "مشاركة (*.MyDeliciousRecipesBackup)",
+    "@shareasappformat": {
+        "description": ""
+    },
+    "operationcompleted": "تمت العملية",
+    "@operationcompleted": {
+        "description": ""
+    },
+    "requiredpermission": "هذا الإذن مطلوب",
+    "@requiredpermission": {
+        "description": ""
+    },
+    "grantpermission": "منح الإذن",
+    "@grantpermission": {
+        "description": ""
+    },
+    "appsettings": "إعدادات التطبيق",
+    "@appsettings": {
+        "description": ""
+    },
+    "grantpermissionfromappsettings": "تحتاج إلى منح هذا الإذن من إعدادات التطبيق.",
+    "@grantpermissionfromappsettings": {
+        "description": ""
+    },
+    "grantpermissionmethod": "إعدادات التطبيق -> الأذونات -> التخزين -> سماح",
+    "@grantpermissionmethod": {
+        "description": ""
+    },
+    "recipesnumber": "هذه الخاصية تتطلب أكثر من وصفة واحدة.",
+    "@recipesnumber": {
+        "description": ""
+    },
+    "privacypolicy": "سياسة الخصوصية",
+    "@privacypolicy": {
+        "description": ""
+    }
+}

@@ -1,0 +1,378 @@
+{
+    "language": "English",
+    "@language": {
+        "description": "The default language"
+    },
+    "search": "Search",
+    "@search": {
+        "description": "To find something"
+    },
+    "refresh": "Refresh",
+    "@refresh": {
+        "description": ""
+    },
+    "settings": "Settings",
+    "@settings": {
+        "description": ""
+    },
+    "about": "About",
+    "@about": {
+        "description": ""
+    },
+    "close": "Close",
+    "@close": {
+        "description": ""
+    },
+    "add": "Add",
+    "@add": {
+        "description": ""
+    },
+    "searchfor": "Search for a recipe",
+    "@searchfor": {
+        "description": ""
+    },
+    "yes": "Yes",
+    "@yes": {
+        "description": ""
+    },
+    "no": "No",
+    "@no": {
+        "description": ""
+    },
+    "passwordinfo": "This password is used to protect recipes from modification or deletion, from someone who is not familiar with the App, it can be modified or deleted at any time.",
+    "@passwordinfo": {
+        "description": ""
+    },
+    "enterpassword": "Enter your password",
+    "@enterpassword": {
+        "description": ""
+    },
+    "save": "Save",
+    "@save": {
+        "description": ""
+    },
+    "exitmessage": "Are you sure you want to leave?",
+    "@exitmessage": {
+        "description": ""
+    },
+    "editordelete": "Modification or deletion",
+    "@editordelete": {
+        "description": ""
+    },
+    "delete": "Delete",
+    "@delete": {
+        "description": "delete"
+    },
+    "change": "Change",
+    "@change": {
+        "description": ""
+    },
+    "modifyordeletepasswordinfo": "You have already added the password! If you want to change it, press Change or press Delete to delete it.",
+    "@modifyordeletepasswordinfo": {
+        "description": ""
+    },
+    "oldpassword": "Old password",
+    "@oldpassword": {
+        "description": ""
+    },
+    "newpassword": "New password",
+    "@newpassword": {
+        "description": ""
+    },
+    "cannotbeemty": "Cannot be empty!",
+    "@cannotbeemty": {
+        "description": ""
+    },
+    "noresults": "No results found!",
+    "@noresults": {
+        "description": ""
+    },
+    "numberofresults": "Number of recipes found is:",
+    "@numberofresults": {
+        "description": ""
+    },
+    "passwordadded": "Password added.",
+    "@passwordadded": {
+        "description": ""
+    },
+    "passwordchanged": "Password changed.",
+    "@passwordchanged": {
+        "description": ""
+    },
+    "wrongpassword": "The old password is wrong!",
+    "@wrongpassword": {
+        "description": ""
+    },
+    "passworddeleted": "Password deleted.",
+    "@passworddeleted": {
+        "description": ""
+    },
+    "meals": "Meals",
+    "@meals": {
+        "description": ""
+    },
+    "desserts": "Desserts",
+    "@desserts": {
+        "description": ""
+    },
+    "deliciousrecipes": "My Delicious Recipes",
+    "@deliciousrecipes": {
+        "description": ""
+    },
+    "apppurpose": "The purpose of this app is to save the prepared recipes and make them available in anytime and anywhere.",
+    "@apppurpose": {
+        "description": ""
+    },
+    "version": "Version",
+    "@version": {
+        "description": ""
+    },
+    "versionnumber": "Version: 1.0.0.",
+    "@versionnumber": {
+        "description": ""
+    },
+    "releasedate": "Release date: March, 2023.",
+    "@releasedate": {
+        "description": ""
+    },
+    "contact": "Contact",
+    "@contact": {
+        "description": ""
+    },
+    "contactemail": "If you require any further information, feel free to contact me:",
+    "@contactemail": {
+        "description": ""
+    },
+    "nopicture": "You have not chosen a picture!",
+    "@nopicture": {
+        "description": ""
+    },
+    "chooserecipe": "Recipe type",
+    "@chooserecipe": {
+        "description": ""
+    },
+    "recipeexists": "This recipe exists!",
+    "@recipeexists": {
+        "description": ""
+    },
+    "successfullysaved": "New recipe successfully added.",
+    "@successfullysaved": {
+        "description": "successfully added."
+    },
+    "recipe": "Recipe",
+    "@recipe": {
+        "description": "addarecipe"
+    },
+    "ingredients": "Ingredients",
+    "@ingredients": {
+        "description": ""
+    },
+    "method": "Method",
+    "@method": {
+        "description": ""
+    },
+    "addapicture": "Add a picture",
+    "@addapicture": {
+        "description": ""
+    },
+    "imagesource": "Select the image source",
+    "@imagesource": {
+        "description": ""
+    },
+    "camera": "Camera",
+    "@camera": {
+        "description": ""
+    },
+    "gallery": "Gallery",
+    "@gallery": {
+        "description": ""
+    },
+    "successfullychanged": "Successfully changed.",
+    "@successfullychanged": {
+        "description": "successfully changed."
+    },
+    "changethepicture": "Change the picture",
+    "@changethepicture": {
+        "description": ""
+    },
+    "deletemessage": "Are you sure you want to delete it?",
+    "@deletemessage": {
+        "description": ""
+    },
+    "preserverecipesmessage": "Do you want to preserve the existing recipes?",
+    "@preserverecipesmessage": {
+        "description": ""
+    },
+    "successfullyDeleted": "Successfully deleted.",
+    "@successfullyDeleted": {
+        "description": "Successfully deleted."
+    },
+    "norecipetype": "You have not chosen the recipe type!",
+    "@norecipetype": {
+        "description": ""
+    },
+    "secuirity": "Secuirity",
+    "@secuirity": {
+        "description": ""
+    },
+    "applanguage": "Language",
+    "@applanguage": {
+        "description": ""
+    },
+    "password": "Password",
+    "@password": {
+        "description": ""
+    },
+    "arabiclanguage": "Arabic",
+    "@arabiclanguage": {
+        "description": ""
+    },
+    "englishlanguage": "English",
+    "@englishlanguage": {
+        "description": ""
+    },
+    "frenchlanguage": "French",
+    "@frenchlanguage": {
+        "description": ""
+    },
+    "internalstorage": "Internal storage",
+    "@internalstorage": {
+        "description": ""
+    },
+    "externalstorage": "External storage",
+    "@externalstorage": {
+        "description": ""
+    },
+    "emptyfolder": "Empty folder.",
+    "@emptyfolder": {
+        "description": ""
+    },
+    "backup": "Backup",
+    "@backup": {
+        "description": ""
+    },
+    "restore": "Restore",
+    "@restore": {
+        "description": ""
+    },
+    "unsupportedimagetype": "Unsupported image type!",
+    "@unsupportedimagetype": {
+        "description": ""
+    },
+    "unsupportedfiletype": "Unsupported file type!",
+    "@unsupportedfiletype": {
+        "description": ""
+    },
+    "notavalidfile": "This is not a valid file!",
+    "@notavalidfile": {
+        "description": ""
+    },
+    "restorecompletedsuccessfully": "Restore completed successfully",
+    "@restorecompletedsuccessfully": {
+        "description": ""
+    },
+    "backupcompletedsuccessfully": "Backup completed successfully",
+    "@backupcompletedsuccessfully": {
+        "description": ""
+    },
+    "copyingpleasewait": "Copying, please wait...",
+    "@copyingpleasewait": {
+        "description": ""
+    },
+    "restoringpleasewait": "Restoring, please wait...",
+    "@restoringpleasewait": {
+        "description": ""
+    },
+    "norecipetobackup": "There is no recipe to backup!",
+    "@norecipetobackup": {
+        "description": ""
+    },
+    "cloudstorage": "Cloud storage",
+    "@cloudstorage": {
+        "description": ""
+    },
+    "localstorage": "Local storage",
+    "@localstorage": {
+        "description": ""
+    },
+    "backupinfo": "Local backup path:",
+    "@backupinfo": {
+        "description": ""
+    },
+    "restoreinfo": "- By clicking the restore button you will open the default backup folder, then choose the backup to be restored. You can also search for another backup on your device (local storage or SD card).\n- You can rename the backup file, but please keep the .MyDeliciousRecipesBackup part of the filename intact.",
+    "@restoreinfo": {
+        "description": ""
+    },
+    "themes": "Themes",
+    "@themes": {
+        "description": ""
+    },
+    "voicetyping": "Voice typing",
+    "@voicetyping": {
+        "description": ""
+    },
+    "voicetypinginfo1": "- This feature requires an internet connection.",
+    "@voicetypinginfo1": {
+        "description": ""
+    },
+    "voicetypinginfo2": "- At the top of your keyboard, tap Microphone ",
+    "@voicetypinginfo2": {
+        "description": ""
+    },
+    "voicetypinginfo3": " Then, dictate your text.",
+    "@voicetypinginfo3": {
+        "description": ""
+    },
+    "voicetypinginfo4": "- If the Microphone icon is missing from your Keyboard, tap Settings ",
+    "@voicetypinginfo4": {
+        "description": ""
+    },
+    "voicetypinginfo5": " Tap Voice typing, then turn Use voice typing on. The Microphone should now be available.",
+    "@voicetypinginfo5": {
+        "description": ""
+    },
+    "voicetypinginfo6": "- If the Settings icon is missing from your Keyboard, touch and hold the comma ',' in the bottom left of your keyboard, then drag your finger to the Settings icon.",
+    "@voicetypinginfo6": {
+        "description": ""
+    },
+    "shareaspdf": "Share (*.pdf)",
+    "@shareaspdf": {
+        "description": ""
+    },
+    "shareasappformat": "Share (*.MyDeliciousRecipesBackup)",
+    "@shareasappformat": {
+        "description": ""
+    },
+    "operationcompleted": "Operation completed",
+    "@operationcompleted": {
+        "description": ""
+    },
+    "requiredpermission": "This permission is required",
+    "@requiredpermission": {
+        "description": ""
+    },
+    "grantpermission": "Grant the permission",
+    "@grantpermission": {
+        "description": ""
+    },
+    "appsettings": "App Settings",
+    "@appsettings": {
+        "description": ""
+    },
+    "grantpermissionfromappsettings": "You need to give this permission from the App Settings.",
+    "@grantpermissionfromappsettings": {
+        "description": ""
+    },
+    "grantpermissionmethod": "App Settings -> Permissions -> Storage -> Allow",
+    "@grantpermissionmethod": {
+        "description": ""
+    },
+    "recipesnumber": "This feature requires more than one recipe.",
+    "@recipesnumber": {
+        "description": ""
+    },
+    "privacypolicy": "Privacy policy",
+    "@privacypolicy": {
+        "description": ""
+    }
+}

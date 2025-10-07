@@ -1,0 +1,378 @@
+{
+    "language": "Français",
+    "@language": {
+        "description": "The default language"
+    },
+    "search": "Rechercher",
+    "@search": {
+        "description": "To find something"
+    },
+    "refresh": "Actualiser",
+    "@refresh": {
+        "description": ""
+    },
+    "settings": "Paramètres",
+    "@settings": {
+        "description": ""
+    },
+    "about": "A propos",
+    "@about": {
+        "description": ""
+    },
+    "close": "Fermer",
+    "@close": {
+        "description": ""
+    },
+    "add": "Ajouter",
+    "@add": {
+        "description": ""
+    },
+    "searchfor": "Rechercher une recette",
+    "@searchfor": {
+        "description": ""
+    },
+    "yes": "Oui",
+    "@yes": {
+        "description": ""
+    },
+    "no": "Non",
+    "@no": {
+        "description": ""
+    },
+    "passwordinfo": "Ce mot de passe est utilisé pour protéger les recettes contre la modification ou la suppression, par quelqu'un qui ne connaît pas le fonctionnement de l'application, il peut être modifié ou supprimé à tout moment.",
+    "@passwordinfo": {
+        "description": ""
+    },
+    "enterpassword": "Saisisser votre mot de passe",
+    "@enterpassword": {
+        "description": ""
+    },
+    "save": "Sauvegarder",
+    "@save": {
+        "description": ""
+    },
+    "exitmessage": "Etes-vous sûr de vouloir fermer l'application?",
+    "@exitmessage": {
+        "description": ""
+    },
+    "editordelete": "Modification ou suppression",
+    "@editordelete": {
+        "description": ""
+    },
+    "delete": "Supprimer",
+    "@delete": {
+        "description": "delete"
+    },
+    "change": "Changer",
+    "@change": {
+        "description": ""
+    },
+    "modifyordeletepasswordinfo": "Vous avez déjà ajouté le mot de passe! Si vous souhaitez le modifier appuyez sur Changer, et pour le supprimer appuyez sur Supprimer.",
+    "@modifyordeletepasswordinfo": {
+        "description": ""
+    },
+    "oldpassword": "Ancien mot de passe",
+    "@oldpassword": {
+        "description": ""
+    },
+    "newpassword": "Nouveau mot de passe",
+    "@newpassword": {
+        "description": ""
+    },
+    "cannotbeemty": "Ne doit pas être vide!",
+    "@cannotbeemty": {
+        "description": ""
+    },
+    "noresults": "Aucun résultat trouvé!",
+    "@noresults": {
+        "description": ""
+    },
+    "numberofresults": "Nombre de recettes trouvées est:",
+    "@numberofresults": {
+        "description": ""
+    },
+    "passwordadded": "Mot de passe ajouté.",
+    "@passwordadded": {
+        "description": ""
+    },
+    "passwordchanged": "Mot de passe changé.",
+    "@passwordchanged": {
+        "description": ""
+    },
+    "wrongpassword": "L'ancien mot de passe est erroné!",
+    "@wrongpassword": {
+        "description": ""
+    },
+    "passworddeleted": "Mot de passe supprimé.",
+    "@passworddeleted": {
+        "description": ""
+    },
+    "meals": "Repas",
+    "@meals": {
+        "description": ""
+    },
+    "desserts": "Desserts",
+    "@desserts": {
+        "description": ""
+    },
+    "deliciousrecipes": "Mes Délicieuses Recettes",
+    "@deliciousrecipes": {
+        "description": ""
+    },
+    "apppurpose": "Le but de cette application est de sauvegarder les recettes préparées et de les rendre disponibles à tout moment et n'importe où.",
+    "@apppurpose": {
+        "description": ""
+    },
+    "version": "Version",
+    "@version": {
+        "description": ""
+    },
+    "versionnumber": "Version: 1.0.0.",
+    "@versionnumber": {
+        "description": ""
+    },
+    "releasedate": "Date de sortie: Mars, 2023.",
+    "@releasedate": {
+        "description": ""
+    },
+    "contact": "Contact",
+    "@contact": {
+        "description": ""
+    },
+    "contactemail": "Pour toute information complémentaire, n'hésitez pas à me contacter:",
+    "@contactemail": {
+        "description": ""
+    },
+    "nopicture": "Vous n'avez pas choisi de photo!",
+    "@nopicture": {
+        "description": ""
+    },
+    "chooserecipe": "Type de la recette",
+    "@chooserecipe": {
+        "description": ""
+    },
+    "recipeexists": "Cette recette existe!",
+    "@recipeexists": {
+        "description": ""
+    },
+    "successfullysaved": "Nouvelle recette ajoutée avec succès.",
+    "@successfullysaved": {
+        "description": "successfully added."
+    },
+    "recipe": "Recette",
+    "@recipe": {
+        "description": "addarecipe"
+    },
+    "ingredients": "Ingrédients",
+    "@ingredients": {
+        "description": ""
+    },
+    "method": "Préparation",
+    "@method": {
+        "description": ""
+    },
+    "addapicture": "Ajouter une photo",
+    "@addapicture": {
+        "description": ""
+    },
+    "imagesource": "Sélectionner la source d'image",
+    "@imagesource": {
+        "description": ""
+    },
+    "camera": "Appareil photo",
+    "@camera": {
+        "description": ""
+    },
+    "gallery": "Galerie",
+    "@gallery": {
+        "description": ""
+    },
+    "successfullychanged": "Changée avec succès.",
+    "@successfullychanged": {
+        "description": "successfully changed."
+    },
+    "changethepicture": "Changer la photo",
+    "@changethepicture": {
+        "description": ""
+    },
+    "deletemessage": "Etes-vous sûr de vouloir supprimer cette recette?",
+    "@deletemessage": {
+        "description": ""
+    },
+    "preserverecipesmessage": "Vous voulez conserver les recettes existantes?",
+    "@preserverecipesmessage": {
+        "description": ""
+    },
+    "successfullyDeleted": "Supprimée avec succès.",
+    "@successfullyDeleted": {
+        "description": "Successfully deleted."
+    },
+    "norecipetype": "Vous n'avez pas choisi le type de la recette!",
+    "@norecipetype": {
+        "description": ""
+    },
+    "secuirity": "Sécurité",
+    "@secuirity": {
+        "description": ""
+    },
+    "applanguage": "Langue",
+    "@applanguage": {
+        "description": ""
+    },
+    "password": "Mot de passe",
+    "@password": {
+        "description": ""
+    },
+    "arabiclanguage": "Arabe",
+    "@arabiclanguage": {
+        "description": ""
+    },
+    "englishlanguage": "Anglais",
+    "@englishlanguage": {
+        "description": ""
+    },
+    "frenchlanguage": "Français",
+    "@frenchlanguage": {
+        "description": ""
+    },
+    "internalstorage": "Stockage interne",
+    "@internalstorage": {
+        "description": ""
+    },
+    "externalstorage": "Stockage externe",
+    "@externalstorage": {
+        "description": ""
+    },
+    "emptyfolder": "Dossier vide.",
+    "@emptyfolder": {
+        "description": ""
+    },
+    "backup": "Sauvegarde",
+    "@backup": {
+        "description": ""
+    },
+    "restore": "Restauration",
+    "@restore": {
+        "description": ""
+    },
+    "unsupportedimagetype": "Le format de la photo n'est pas pris en charge!",
+    "@unsupportedimagetype": {
+        "description": ""
+    },
+    "unsupportedfiletype": "Le format du fichier n'est pas pris en charge!",
+    "@unsupportedfiletype": {
+        "description": ""
+    },
+    "notavalidfile": "Ce fichier n'est pas un fichier valide!",
+    "@notavalidfile": {
+        "description": ""
+    },
+    "restorecompletedsuccessfully": "Restauration terminée avec succès",
+    "@restorecompletedsuccessfully": {
+        "description": ""
+    },
+    "backupcompletedsuccessfully": "Sauvegarde terminée avec succès",
+    "@backupcompletedsuccessfully": {
+        "description": ""
+    },
+    "copyingpleasewait": "Copie en cours, veuillez patienter...",
+    "@copyingpleasewait": {
+        "description": ""
+    },
+    "restoringpleasewait": "Restauration en cours, veuillez patienter...",
+    "@restoringpleasewait": {
+        "description": ""
+    },
+    "norecipetobackup": "Il n'y a pas de recette à sauvegarder!",
+    "@norecipetobackup": {
+        "description": ""
+    },
+    "cloudstorage": "Stockage dans le cloud",
+    "@cloudstorage": {
+        "description": ""
+    },
+    "localstorage": "Stockage local",
+    "@localstorage": {
+        "description": ""
+    },
+    "backupinfo": "Chemin de la sauvegarde locale:",
+    "@backupinfo": {
+        "description": ""
+    },
+    "restoreinfo": "- En cliquant sur le bouton de restauration, vous ouvrez le dossier de sauvegarde par défaut, puis choisissez la sauvegarde à restaurer. Vous pouvez également rechercher une autre sauvegarde sur votre appareil (stockage local ou carte SD).\n- Vous pouvez renommer le fichier de sauvegarde, mais veuillez conserver la partie .MyDeliciousRecipesBackup du nom de fichier intacte.",
+    "@restoreinfo": {
+        "description": ""
+    },
+    "themes": "Thèmes",
+    "@themes": {
+        "description": ""
+    },
+    "voicetyping": "Saisie vocale",
+    "@voicetyping": {
+        "description": ""
+    },
+    "voicetypinginfo1": "- Cette fonctionnalité nécessite une connexion internet.",
+    "@voicetypinginfo1": {
+        "description": ""
+    },
+    "voicetypinginfo2": "- En haut de votre clavier, appuyez sur le micro ",
+    "@voicetypinginfo2": {
+        "description": ""
+    },
+    "voicetypinginfo3": " Ensuite, dictez votre texte.",
+    "@voicetypinginfo3": {
+        "description": ""
+    },
+    "voicetypinginfo4": "- Si l'icône du Microphone est absente de votre clavier, appuyez sur Paramètres ",
+    "@voicetypinginfo4": {
+        "description": ""
+    },
+    "voicetypinginfo5": " Appuyez sur Saisie vocale, puis activez l'option Utiliser la saisie vocale. Maintenant, le microphone devrait être disponible.",
+    "@voicetypinginfo5": {
+        "description": ""
+    },
+    "voicetypinginfo6": "- Si l'icône Paramètres est absente de votre clavier, appuyez de manière prolongée sur la virgule ',' en bas à gauche de votre clavier, puis faites glisser votre doigt vers l'icône Paramètres.",
+    "@voicetypinginfo6": {
+        "description": ""
+    },
+    "shareaspdf": "Partager (*.pdf)",
+    "@shareaspdf": {
+        "description": ""
+    },
+    "shareasappformat": "Partager (*.MyDeliciousRecipesBackup)",
+    "@shareasappformat": {
+        "description": ""
+    },
+    "operationcompleted": "Opération terminée",
+    "@operationcompleted": {
+        "description": ""
+    },
+    "requiredpermission": "Cette autorisation est nécessaire",
+    "@requiredpermission": {
+        "description": ""
+    },
+    "grantpermission": "Octroyer l'autorisation",
+    "@grantpermission": {
+        "description": ""
+    },
+    "appsettings": "Paramètres de l'application",
+    "@appsettings": {
+        "description": ""
+    },
+    "grantpermissionfromappsettings": "Vous devez octroyer cette autorisation à partir des paramètres de l'application.",
+    "@grantpermissionfromappsettings": {
+        "description": ""
+    },
+    "grantpermissionmethod": "Paramètres de l'application -> Autorisations -> Stockage -> Autoriser",
+    "@grantpermissionmethod": {
+        "description": ""
+    },
+    "recipesnumber": "Cette fonctionnalité nécessite plus d'une recette.",
+    "@recipesnumber": {
+        "description": ""
+    },
+    "privacypolicy": "Politique de confidentialité",
+    "@privacypolicy": {
+        "description": ""
+    }
+}
