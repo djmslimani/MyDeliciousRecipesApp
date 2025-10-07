@@ -6,7 +6,6 @@ list(APPEND FLUTTER_PLUGIN_LIST
   file_selector_windows
   file_support
   permission_handler_windows
-  rive_common
   share_plus
   url_launcher_windows
 )

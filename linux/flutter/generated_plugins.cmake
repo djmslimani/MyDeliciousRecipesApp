@@ -5,7 +5,6 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   file_selector_linux
   file_support
-  rive_common
   url_launcher_linux
 )
 

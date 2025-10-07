@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:external_path/external_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -323,613 +322,446 @@ class _MySettingsState extends State<MySettings> {
                                           ),
                                         );
                                       } else {
-                                        AwesomeDialog(
-                                          width: 90.w,
-                                          isDense: true,
+                                        showDialog(
                                           context: context,
-                                          dialogType: DialogType.warning,
-                                          animType: AnimType.topSlide,
-                                          body: Padding(
-                                            padding: EdgeInsets.only(top: 4.h),
-                                            child: TextFormField(
-                                              readOnly: true,
-                                              autofocus: true,
-                                              maxLines: null,
-                                              textAlign: TextAlign.justify,
-                                              initialValue: AppLocalizations.of(
-                                                      context)!
-                                                  .modifyordeletepasswordinfo,
-                                              style: TextStyle(
-                                                fontSize: 15.sp,
-                                                fontWeight: FontWeight.bold,
-                                                height: 1.5,
+                                          builder: (context) => Directionality(
+                                            textDirection:
+                                                Directionality.of(context),
+                                            child: AlertDialog(
+                                              scrollable: true,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(25.0),
                                               ),
-                                              decoration: InputDecoration(
-                                                label: Text(
-                                                  AppLocalizations.of(context)!
-                                                      .editordelete,
-                                                  style: TextStyle(
-                                                    color: Color.fromARGB(
-                                                        255, 255, 6, 6),
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 18.sp,
-                                                  ),
+                                              title: Text(
+                                                AppLocalizations.of(context)!
+                                                    .editordelete,
+                                                style: TextStyle(
+                                                  color: Colors.red,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18.sp,
                                                 ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      color: Colors.black,
-                                                      width: 2),
-                                                  borderRadius:
-                                                      BorderRadius.circular(30),
-                                                ),
-                                                border: OutlineInputBorder(
-                                                  borderSide: BorderSide(),
-                                                  borderRadius:
-                                                      BorderRadius.circular(30),
-                                                ),
+                                                textAlign: TextAlign.center,
                                               ),
-                                            ),
-                                          ),
-                                          reverseBtnOrder: true,
-                                          btnOk: TextButton(
-                                            onPressed: () {
-                                              Navigator.pop(context);
-                                              showDialog(
-                                                context: context,
-                                                builder: (context) =>
-                                                    AlertDialog(
-                                                  scrollable: true,
-                                                  icon: Icon(
-                                                    Icons.lock_reset_sharp,
-                                                    color: Colors.red,
-                                                    size: 13.w,
-                                                  ),
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        new BorderRadius
-                                                            .circular(25.0),
-                                                  ),
-                                                  content: Form(
-                                                    autovalidateMode:
-                                                        AutovalidateMode
-                                                            .onUserInteraction,
-                                                    key: formKey,
-                                                    child: Container(
-                                                      width: 50.w,
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              TextFormField(
-                                                                validator:
-                                                                    (value) {
-                                                                  if (value!
-                                                                      .isEmpty) {
-                                                                    return AppLocalizations.of(
-                                                                            context)!
-                                                                        .cannotbeemty;
-                                                                  } else if (value !=
-                                                                      password) {
-                                                                    return AppLocalizations.of(
-                                                                            context)!
-                                                                        .wrongpassword;
-                                                                  }
-                                                                  return null;
-                                                                },
-                                                                keyboardType:
-                                                                    TextInputType
-                                                                        .number,
-                                                                inputFormatters: [
-                                                                  FilteringTextInputFormatter
-                                                                      .digitsOnly
-                                                                ],
-                                                                controller:
-                                                                    _oldPasswordController,
-                                                                maxLength: 6,
-                                                                obscuringCharacter:
-                                                                    '*',
-                                                                obscureText:
-                                                                    true,
-                                                                autofocus: true,
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize:
-                                                                      25.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                                decoration:
-                                                                    InputDecoration(
-                                                                  counterStyle:
-                                                                      TextStyle(
-                                                                          fontSize:
-                                                                              10.sp),
-                                                                  errorStyle:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .red,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontSize:
-                                                                        10.sp,
-                                                                  ),
-                                                                  label:
-                                                                      TextScroll(
-                                                                    intervalSpaces:
-                                                                        10,
-                                                                    mode: TextScrollMode
-                                                                        .endless,
-                                                                    delayBefore:
-                                                                        const Duration(
-                                                                            milliseconds:
-                                                                                500),
-                                                                    pauseBetween:
-                                                                        const Duration(
-                                                                            milliseconds:
-                                                                                100),
-                                                                    selectable:
-                                                                        true,
-                                                                    AppLocalizations.of(
-                                                                            context)!
-                                                                        .oldpassword,
-                                                                    velocity: const Velocity(
-                                                                        pixelsPerSecond: Offset(
-                                                                            20,
-                                                                            0)),
-                                                                    style:
-                                                                        TextStyle(
-                                                                      color: Colors
-                                                                              .greenAccent[
-                                                                          700],
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontSize:
-                                                                          15.sp,
-                                                                    ),
-                                                                  ),
-                                                                  focusedBorder:
-                                                                      OutlineInputBorder(
-                                                                    borderSide: BorderSide(
-                                                                        color: Colors
-                                                                            .black,
-                                                                        width:
-                                                                            2),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            30.w),
-                                                                  ),
-                                                                  border:
-                                                                      OutlineInputBorder(
-                                                                    borderSide:
-                                                                        BorderSide(),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            30.w),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          SizedBox(
-                                                            height: 1.h,
-                                                          ),
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              TextFormField(
-                                                                validator:
-                                                                    (value) {
-                                                                  if (value!
-                                                                      .isEmpty) {
-                                                                    return AppLocalizations.of(
-                                                                            context)!
-                                                                        .cannotbeemty;
-                                                                  }
-                                                                  return null;
-                                                                },
-                                                                keyboardType:
-                                                                    TextInputType
-                                                                        .number,
-                                                                inputFormatters: [
-                                                                  FilteringTextInputFormatter
-                                                                      .digitsOnly
-                                                                ],
-                                                                controller:
-                                                                    _newPasswordController,
-                                                                maxLength: 6,
-                                                                obscuringCharacter:
-                                                                    '*',
-                                                                obscureText:
-                                                                    true,
-                                                                autofocus: true,
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize:
-                                                                      25.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                                decoration:
-                                                                    InputDecoration(
-                                                                  counterStyle:
-                                                                      TextStyle(
-                                                                          fontSize:
-                                                                              10.sp),
-                                                                  errorStyle:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .red,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontSize:
-                                                                        10.sp,
-                                                                  ),
-                                                                  label:
-                                                                      TextScroll(
-                                                                    intervalSpaces:
-                                                                        10,
-                                                                    mode: TextScrollMode
-                                                                        .endless,
-                                                                    delayBefore:
-                                                                        const Duration(
-                                                                            milliseconds:
-                                                                                500),
-                                                                    pauseBetween:
-                                                                        const Duration(
-                                                                            milliseconds:
-                                                                                100),
-                                                                    selectable:
-                                                                        true,
-                                                                    AppLocalizations.of(
-                                                                            context)!
-                                                                        .newpassword,
-                                                                    velocity: const Velocity(
-                                                                        pixelsPerSecond: Offset(
-                                                                            20,
-                                                                            0)),
-                                                                    style:
-                                                                        TextStyle(
-                                                                      color: Colors
-                                                                              .greenAccent[
-                                                                          700],
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontSize:
-                                                                          15.sp,
-                                                                    ),
-                                                                  ),
-                                                                  focusedBorder:
-                                                                      OutlineInputBorder(
-                                                                    borderSide: BorderSide(
-                                                                        color: Colors
-                                                                            .black,
-                                                                        width:
-                                                                            2),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            30.w),
-                                                                  ),
-                                                                  border:
-                                                                      OutlineInputBorder(
-                                                                    borderSide:
-                                                                        BorderSide(),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            30.w),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          SizedBox(
-                                                            height: 1.h,
-                                                          ),
-                                                          TextButton(
-                                                            child: Text(
-                                                              AppLocalizations.of(
-                                                                      context)!
-                                                                  .change,
-                                                              style: TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                fontSize: 20.sp,
-                                                                color: Colors
-                                                                        .greenAccent[
-                                                                    700],
-                                                              ),
-                                                            ),
-                                                            onPressed:
-                                                                () async {
-                                                              if (_oldPasswordController.text.trim().isEmpty ||
-                                                                  _newPasswordController
-                                                                      .text
-                                                                      .trim()
-                                                                      .isEmpty ||
-                                                                  _oldPasswordController
-                                                                          .text
-                                                                          .trim() !=
-                                                                      password) {
-                                                                formKey
-                                                                    .currentState!
-                                                                    .validate();
-                                                              } else {
-                                                                savePreferences(
-                                                                    _newPasswordController
-                                                                        .text
-                                                                        .trim());
-                                                                _oldPasswordController
-                                                                    .clear();
-                                                                _newPasswordController
-                                                                    .clear();
-                                                                showSnackBar(
-                                                                    context,
-                                                                    AppLocalizations.of(
-                                                                            context)!
-                                                                        .passwordchanged,
-                                                                    myColors!
-                                                                        .backgroundPopupMenuRecipes!,
-                                                                    myColors!
-                                                                        .textPopupMenuRecipes!);
-                                                                Navigator.pop(
-                                                                    context);
-                                                              }
-                                                              ;
-                                                            },
-                                                          ),
-                                                        ],
+                                              content: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  TextFormField(
+                                                    readOnly: true,
+                                                    autofocus: true,
+                                                    maxLines: null,
+                                                    textAlign:
+                                                        TextAlign.justify,
+                                                    initialValue: AppLocalizations
+                                                            .of(context)!
+                                                        .modifyordeletepasswordinfo,
+                                                    style: TextStyle(
+                                                        fontSize: 15.sp,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        height: 1.5),
+                                                    decoration: InputDecoration(
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color: Colors.black,
+                                                            width: 2),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30),
+                                                      ),
+                                                      border:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            BorderSide(),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                              );
-                                            },
-                                            child: Text(
-                                              AppLocalizations.of(context)!
-                                                  .change,
-                                              style: TextStyle(
-                                                fontSize: 15.sp,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.greenAccent[700],
-                                              ),
-                                            ),
-                                          ),
-                                          btnCancel: TextButton(
-                                            onPressed: () {
-                                              Navigator.pop(context);
-                                              showDialog(
-                                                context: context,
-                                                builder: (context) =>
-                                                    AlertDialog(
-                                                  scrollable: true,
-                                                  icon: Icon(
-                                                    Icons.lock_rounded,
-                                                    color: Colors.red,
-                                                    size: 10.w,
-                                                  ),
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        new BorderRadius
-                                                            .circular(25.0),
-                                                  ),
-                                                  content: Form(
-                                                    autovalidateMode:
-                                                        AutovalidateMode
-                                                            .onUserInteraction,
-                                                    key: formKey,
-                                                    child: Container(
-                                                      width: 50.w,
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              TextFormField(
-                                                                validator:
-                                                                    (value) {
-                                                                  if (value!
-                                                                      .isEmpty) {
-                                                                    return AppLocalizations.of(
-                                                                            context)!
-                                                                        .cannotbeemty;
-                                                                  } else if (value !=
-                                                                      password) {
-                                                                    return AppLocalizations.of(
-                                                                            context)!
-                                                                        .wrongpassword;
-                                                                  }
-                                                                  return null;
-                                                                },
-                                                                keyboardType:
-                                                                    TextInputType
-                                                                        .number,
-                                                                inputFormatters: [
-                                                                  FilteringTextInputFormatter
-                                                                      .digitsOnly
-                                                                ],
-                                                                controller:
-                                                                    _oldPasswordController,
-                                                                maxLength: 6,
-                                                                obscuringCharacter:
-                                                                    '*',
-                                                                obscureText:
+                                                  SizedBox(height: 2.h),
+                                                  // Buttons centered
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      // CHANGE button
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                          showDialog(
+                                                            context: context,
+                                                            builder: (context) =>
+                                                                Directionality(
+                                                              textDirection:
+                                                                  Directionality
+                                                                      .of(context),
+                                                              child:
+                                                                  AlertDialog(
+                                                                scrollable:
                                                                     true,
-                                                                autofocus: true,
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize:
-                                                                      25.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                                decoration:
-                                                                    InputDecoration(
-                                                                  counterStyle:
-                                                                      TextStyle(
-                                                                          fontSize:
-                                                                              10.sp),
-                                                                  errorStyle:
-                                                                      TextStyle(
+                                                                icon: Icon(
+                                                                    Icons
+                                                                        .lock_reset_sharp,
                                                                     color: Colors
                                                                         .red,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontSize:
-                                                                        10.sp,
-                                                                  ),
-                                                                  label:
-                                                                      TextScroll(
-                                                                    intervalSpaces:
-                                                                        10,
-                                                                    mode: TextScrollMode
-                                                                        .endless,
-                                                                    delayBefore:
-                                                                        const Duration(
-                                                                            milliseconds:
-                                                                                500),
-                                                                    pauseBetween:
-                                                                        const Duration(
-                                                                            milliseconds:
-                                                                                100),
-                                                                    selectable:
-                                                                        true,
-                                                                    AppLocalizations.of(
-                                                                            context)!
-                                                                        .oldpassword,
-                                                                    velocity: const Velocity(
-                                                                        pixelsPerSecond: Offset(
-                                                                            20,
-                                                                            0)),
-                                                                    style:
-                                                                        TextStyle(
-                                                                      color: Colors
-                                                                              .greenAccent[
-                                                                          700],
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontSize:
-                                                                          15.sp,
-                                                                    ),
-                                                                  ),
-                                                                  focusedBorder:
-                                                                      OutlineInputBorder(
-                                                                    borderSide: BorderSide(
-                                                                        color: Colors
-                                                                            .black,
-                                                                        width:
-                                                                            2),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            30.w),
-                                                                  ),
-                                                                  border:
-                                                                      OutlineInputBorder(
-                                                                    borderSide:
-                                                                        BorderSide(),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            30.w),
-                                                                  ),
+                                                                    size: 40),
+                                                                shape:
+                                                                    RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              25.0),
                                                                 ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          SizedBox(
-                                                            height: 1.h,
-                                                          ),
-                                                          TextButton(
-                                                            child: Text(
-                                                              AppLocalizations.of(
-                                                                      context)!
-                                                                  .delete,
-                                                              style: TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                fontSize: 20.sp,
-                                                                color: Color
-                                                                    .fromARGB(
-                                                                        255,
-                                                                        255,
-                                                                        26,
-                                                                        9),
-                                                              ),
-                                                            ),
-                                                            onPressed:
-                                                                () async {
-                                                              _oldPasswordController
-                                                                          .text
-                                                                          .trim() !=
-                                                                      password
-                                                                  ? formKey
-                                                                      .currentState!
-                                                                      .validate()
-                                                                  : {
-                                                                      deletePreferences(
-                                                                          'password'),
-                                                                      _oldPasswordController
-                                                                          .clear(),
-                                                                      showSnackBar(
-                                                                          context,
+                                                                content: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .min,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    // Old password
+                                                                    TextFormField(
+                                                                      validator:
+                                                                          (value) {
+                                                                        if (value!
+                                                                            .isEmpty)
+                                                                          return AppLocalizations.of(context)!
+                                                                              .cannotbeemty;
+                                                                        if (value !=
+                                                                            password)
+                                                                          return AppLocalizations.of(context)!
+                                                                              .wrongpassword;
+                                                                        return null;
+                                                                      },
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .number,
+                                                                      inputFormatters: [
+                                                                        FilteringTextInputFormatter
+                                                                            .digitsOnly
+                                                                      ],
+                                                                      controller:
+                                                                          _oldPasswordController,
+                                                                      maxLength:
+                                                                          6,
+                                                                      obscuringCharacter:
+                                                                          '*',
+                                                                      obscureText:
+                                                                          true,
+                                                                      autofocus:
+                                                                          true,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: TextStyle(
+                                                                          fontSize: 25
+                                                                              .sp,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        labelText:
+                                                                            AppLocalizations.of(context)!.oldpassword,
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide: BorderSide(
+                                                                              color: Colors.black,
+                                                                              width: 2),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(30.w),
+                                                                        ),
+                                                                        border:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(30.w),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                        height:
+                                                                            1.h),
+                                                                    // New password
+                                                                    TextFormField(
+                                                                      validator:
+                                                                          (value) {
+                                                                        if (value!
+                                                                            .isEmpty)
+                                                                          return AppLocalizations.of(context)!
+                                                                              .cannotbeemty;
+                                                                        return null;
+                                                                      },
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .number,
+                                                                      inputFormatters: [
+                                                                        FilteringTextInputFormatter
+                                                                            .digitsOnly
+                                                                      ],
+                                                                      controller:
+                                                                          _newPasswordController,
+                                                                      maxLength:
+                                                                          6,
+                                                                      obscureText:
+                                                                          true,
+                                                                      autofocus:
+                                                                          true,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: TextStyle(
+                                                                          fontSize: 25
+                                                                              .sp,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        labelText:
+                                                                            AppLocalizations.of(context)!.newpassword,
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide: BorderSide(
+                                                                              color: Colors.black,
+                                                                              width: 2),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(30.w),
+                                                                        ),
+                                                                        border:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(30.w),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                        height:
+                                                                            1.h),
+                                                                    // Confirm change
+                                                                    Center(
+                                                                      child:
+                                                                          TextButton(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          if (_oldPasswordController.text.trim().isEmpty ||
+                                                                              _newPasswordController.text.trim().isEmpty ||
+                                                                              _oldPasswordController.text.trim() != password) {
+                                                                            formKey.currentState!.validate();
+                                                                          } else {
+                                                                            savePreferences(_newPasswordController.text.trim());
+                                                                            _oldPasswordController.clear();
+                                                                            _newPasswordController.clear();
+                                                                            showSnackBar(
+                                                                              context,
+                                                                              AppLocalizations.of(context)!.passwordchanged,
+                                                                              myColors!.backgroundPopupMenuRecipes!,
+                                                                              myColors!.textPopupMenuRecipes!,
+                                                                            );
+                                                                            Navigator.pop(context);
+                                                                          }
+                                                                        },
+                                                                        child:
+                                                                            Text(
                                                                           AppLocalizations.of(context)!
-                                                                              .passworddeleted,
-                                                                          myColors!
-                                                                              .backgroundPopupMenuRecipes!,
-                                                                          myColors!
-                                                                              .textPopupMenuRecipes!),
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                    };
-                                                            },
-                                                          ),
-                                                        ],
+                                                                              .change,
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            fontSize:
+                                                                                20.sp,
+                                                                            color:
+                                                                                Colors.greenAccent[700],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                        child: Text(
+                                                          AppLocalizations.of(
+                                                                  context)!
+                                                              .change,
+                                                          style: TextStyle(
+                                                              fontSize: 15.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color: Colors
+                                                                      .greenAccent[
+                                                                  700]),
+                                                        ),
                                                       ),
-                                                    ),
+                                                      // DELETE button
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                          showDialog(
+                                                            context: context,
+                                                            builder: (context) =>
+                                                                Directionality(
+                                                              textDirection:
+                                                                  Directionality
+                                                                      .of(context),
+                                                              child:
+                                                                  AlertDialog(
+                                                                scrollable:
+                                                                    true,
+                                                                icon: Icon(
+                                                                    Icons
+                                                                        .lock_rounded,
+                                                                    color: Colors
+                                                                        .red,
+                                                                    size: 40),
+                                                                shape:
+                                                                    RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              25.0),
+                                                                ),
+                                                                content: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .min,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    TextFormField(
+                                                                      validator:
+                                                                          (value) {
+                                                                        if (value!
+                                                                            .isEmpty)
+                                                                          return AppLocalizations.of(context)!
+                                                                              .cannotbeemty;
+                                                                        if (value !=
+                                                                            password)
+                                                                          return AppLocalizations.of(context)!
+                                                                              .wrongpassword;
+                                                                        return null;
+                                                                      },
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .number,
+                                                                      inputFormatters: [
+                                                                        FilteringTextInputFormatter
+                                                                            .digitsOnly
+                                                                      ],
+                                                                      controller:
+                                                                          _oldPasswordController,
+                                                                      maxLength:
+                                                                          6,
+                                                                      obscureText:
+                                                                          true,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: TextStyle(
+                                                                          fontSize: 25
+                                                                              .sp,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        labelText:
+                                                                            AppLocalizations.of(context)!.oldpassword,
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide: BorderSide(
+                                                                              color: Colors.black,
+                                                                              width: 2),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(30.w),
+                                                                        ),
+                                                                        border:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(30.w),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                        height:
+                                                                            1.h),
+                                                                    Center(
+                                                                      child:
+                                                                          TextButton(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          if (_oldPasswordController.text.trim() !=
+                                                                              password) {
+                                                                            formKey.currentState!.validate();
+                                                                          } else {
+                                                                            deletePreferences('password');
+                                                                            _oldPasswordController.clear();
+                                                                            showSnackBar(
+                                                                              context,
+                                                                              AppLocalizations.of(context)!.passworddeleted,
+                                                                              myColors!.backgroundPopupMenuRecipes!,
+                                                                              myColors!.textPopupMenuRecipes!,
+                                                                            );
+                                                                            Navigator.pop(context);
+                                                                          }
+                                                                        },
+                                                                        child:
+                                                                            Text(
+                                                                          AppLocalizations.of(context)!
+                                                                              .delete,
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            fontSize:
+                                                                                20.sp,
+                                                                            color:
+                                                                                Colors.red,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                        child: Text(
+                                                          AppLocalizations.of(
+                                                                  context)!
+                                                              .delete,
+                                                          style: TextStyle(
+                                                              fontSize: 15.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Colors.red),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                ),
-                                              );
-                                            },
-                                            child: Text(
-                                              AppLocalizations.of(context)!
-                                                  .delete,
-                                              style: TextStyle(
-                                                fontSize: 15.sp,
-                                                fontWeight: FontWeight.bold,
-                                                color: Color(0xFFFF0000),
+                                                ],
                                               ),
                                             ),
                                           ),
-                                        )..show();
+                                        );
                                       }
                                     },
                                     child: IntrinsicHeight(

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:circular_menu/circular_menu.dart';
 import 'package:confetti/confetti.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -506,194 +505,246 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 }
                               }),
                           CircularMenuItem(
-                              icon: CustomIcons.search,
-                              color: Colors.blue,
-                              iconSize: 4.h,
-                              onTap: () {
-                                circularMenuKey.currentState!
-                                    .reverseAnimation();
+                            icon: CustomIcons.search,
+                            color: Colors.blue,
+                            iconSize: 4.h,
+                            onTap: () {
+                              circularMenuKey.currentState!.reverseAnimation();
 
-                                _searchController.clear();
-                                setState(() {
-                                  _currentIndex =
-                                      _myTabController!.index == 0 ? 0 : 2;
-                                  hideFloatingActionButton = true;
-                                  AddRecipes.tabIndex = _myTabController!.index;
-                                });
-                                AwesomeDialog(
-                                  width: 80.w,
-                                  isDense: true,
-                                  context: context,
-                                  dialogType: DialogType.noHeader,
-                                  animType: AnimType.scale,
-                                  body: Form(
-                                    autovalidateMode:
-                                        AutovalidateMode.onUserInteraction,
-                                    key: formKey,
-                                    child: Padding(
-                                      padding: EdgeInsets.all(2.h),
-                                      child: TextFormField(
-                                        validator: (value) {
-                                          if (value!.isEmpty) {
-                                            return AppLocalizations.of(context)!
-                                                .cannotbeemty;
-                                          }
-                                          return null;
-                                        },
-                                        controller: _searchController,
-                                        autofocus: true,
-                                        style: TextStyle(fontSize: 20.sp),
-                                        decoration: InputDecoration(
-                                          errorStyle: TextStyle(
-                                            fontSize: 8.sp,
-                                          ),
-                                          label: Text(
-                                            AppLocalizations.of(context)!
-                                                .searchfor,
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16.sp),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                                color: Colors.black, width: 1),
-                                            borderRadius:
-                                                BorderRadius.circular(30),
-                                          ),
-                                          border: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                                color: Colors.white, width: 1),
-                                            borderRadius:
-                                                BorderRadius.circular(30),
-                                          ),
-                                        ),
-                                      ),
+                              _searchController.clear();
+                              setState(() {
+                                _currentIndex =
+                                    _myTabController!.index == 0 ? 0 : 2;
+                                hideFloatingActionButton = true;
+                                AddRecipes.tabIndex = _myTabController!.index;
+                              });
+
+                              showDialog(
+                                context: context,
+                                barrierDismissible: false,
+                                builder: (context) => Directionality(
+                                  textDirection: Directionality.of(context),
+                                  child: AlertDialog(
+                                    backgroundColor: Colors.grey.shade100,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25.0),
                                     ),
-                                  ),
-                                  btnOk: TextButton(
-                                    onPressed: () async {
-                                      if (_searchController.text.isEmpty) {
-                                        formKey.currentState!.validate();
-                                      } else {
-                                        List<Map> sqlData = await _sqlDb
-                                            .readData(
+                                    content: SingleChildScrollView(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          // Search TextField
+                                          Form(
+                                            key: formKey,
+                                            autovalidateMode: AutovalidateMode
+                                                .onUserInteraction,
+                                            child: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 2.h),
+                                              child: TextFormField(
+                                                controller: _searchController,
+                                                autofocus: true,
+                                                style:
+                                                    TextStyle(fontSize: 20.sp),
+                                                decoration: InputDecoration(
+                                                  label: Text(
+                                                    AppLocalizations.of(
+                                                            context)!
+                                                        .searchfor,
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 16.sp),
+                                                  ),
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.black,
+                                                        width: 1),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                  border: OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                  errorStyle:
+                                                      TextStyle(fontSize: 8.sp),
+                                                ),
+                                                validator: (value) {
+                                                  if (value!.isEmpty) {
+                                                    return AppLocalizations.of(
+                                                            context)!
+                                                        .cannotbeemty;
+                                                  }
+                                                  return null;
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 2.h),
+                                          // Search Button centered
+                                          TextButton.icon(
+                                            onPressed: () async {
+                                              if (_searchController
+                                                  .text.isEmpty) {
+                                                formKey.currentState!
+                                                    .validate();
+                                                return;
+                                              }
+
+                                              List<Map> sqlData =
+                                                  await _sqlDb.readData(
                                                 table: 'Cooking',
                                                 orderby: 'id DESC',
                                                 where: 'title LIKE ?',
                                                 whereArgs: [
-                                              '%${_searchController.text.trim()}%'
-                                            ]);
+                                                  '%${_searchController.text.trim()}%'
+                                                ],
+                                              );
 
-                                        if (sqlData.isEmpty) {
-                                          showDialog(
-                                            context: context,
-                                            builder: (context) => AlertDialog(
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              insetPadding: EdgeInsets.zero,
-                                              contentPadding: EdgeInsets.zero,
-                                              scrollable: true,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    new BorderRadius.circular(
-                                                        25.0),
-                                              ),
-                                              content: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Icon(
-                                                    Icons.warning_amber_rounded,
-                                                    color: Colors.red,
-                                                    size: 10.h,
-                                                  ),
-                                                  SizedBox(height: 2.h),
-                                                  Text(
-                                                    AppLocalizations.of(
-                                                            context)!
-                                                        .noresults,
-                                                    style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 18.sp,
-                                                      color: Colors.white,
+                                              if (sqlData.isEmpty) {
+                                                showDialog(
+                                                  context: context,
+                                                  builder: (context) =>
+                                                      Directionality(
+                                                    textDirection:
+                                                        Directionality.of(
+                                                            context),
+                                                    child: AlertDialog(
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      insetPadding:
+                                                          EdgeInsets.zero,
+                                                      contentPadding:
+                                                          EdgeInsets.zero,
+                                                      scrollable: true,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(25.0),
+                                                      ),
+                                                      content: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(
+                                                              Icons
+                                                                  .warning_amber_rounded,
+                                                              color: Colors.red,
+                                                              size: 10.h),
+                                                          SizedBox(height: 2.h),
+                                                          Text(
+                                                            AppLocalizations.of(
+                                                                    context)!
+                                                                .noresults,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 18.sp,
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                          SizedBox(height: 2.h),
+                                                          TextButton.icon(
+                                                            onPressed: () {
+                                                              Navigator.pop(
+                                                                  context);
+                                                              _deleteCacheFiles();
+                                                            },
+                                                            icon: Icon(
+                                                                Icons.check,
+                                                                color: Colors
+                                                                        .greenAccent[
+                                                                    700],
+                                                                size: 6.h),
+                                                            label: Text(
+                                                              AppLocalizations.of(
+                                                                      context)!
+                                                                  .search,
+                                                              style: TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize:
+                                                                      18.sp,
+                                                                  color: Colors
+                                                                      .white),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
-                                                  IconButton(
-                                                    onPressed: () {
-                                                      Navigator.pop(context);
-                                                      _deleteCacheFiles(); //Delete the cache of the App
-                                                    },
-                                                    icon: Icon(Icons.check),
-                                                    color:
-                                                        Colors.greenAccent[700],
-                                                    iconSize: 6.h,
-                                                  ),
-                                                ],
+                                                );
+                                              } else {
+                                                HomePage.searchIndex = true;
+                                                savePreferences(
+                                                    _searchController.text
+                                                        .trim());
+                                                await SharedPreferences
+                                                    .getInstance();
+                                                HomePage.savedText =
+                                                    _preferences!
+                                                        .getString('savedText');
+
+                                                showSnackBar(
+                                                  context,
+                                                  '${AppLocalizations.of(context)!.numberofresults} ${sqlData.length}',
+                                                  myColors!
+                                                      .backgroundPopupMenuHome!,
+                                                  myColors!.textPopupMenuHome!,
+                                                );
+
+                                                Navigator.pop(
+                                                    context); // close dialog
+                                                await Navigator.of(context)
+                                                    .pushReplacementNamed(
+                                                  RouteManager.searchPage,
+                                                );
+                                              }
+                                            },
+                                            icon: Icon(Icons.search_sharp,
+                                                color: Colors.red, size: 4.h),
+                                            label: Text(
+                                              AppLocalizations.of(context)!
+                                                  .search,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20.sp,
+                                                color: Colors.black,
                                               ),
                                             ),
-                                          );
-                                        } else {
-                                          HomePage.searchIndex = true;
-                                          savePreferences(_searchController.text
-                                              .trim()); //***************************************************************************************************************** */
-                                          //************get saved text*************/
-                                          await SharedPreferences.getInstance();
-                                          HomePage.savedText = _preferences!
-                                              .getString('savedText');
-                                          //***************************************/
-
-                                          showSnackBar(
-                                              context,
-                                              '${AppLocalizations.of(context)!.numberofresults} ${sqlData.length}',
-                                              myColors!
-                                                  .backgroundPopupMenuHome!,
-                                              myColors!.textPopupMenuHome!);
-                                          Navigator.pop(context);
-
-                                          await Navigator.of(context)
-                                              .pushReplacementNamed(
-                                                  RouteManager.searchPage);
-                                        }
-                                      }
-                                    },
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Icon(
-                                          Icons.search_sharp,
-                                          color: Colors.red,
-                                          size: 4.h,
-                                        ),
-                                        SizedBox(
-                                          width: 1.h,
-                                        ),
-                                        Text(
-                                          AppLocalizations.of(context)!.search,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20.sp,
-                                              color: Colors.black),
-                                        ),
-                                      ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                  dialogBackgroundColor: Colors.grey.shade100,
-                                )..show().whenComplete(
-                                    () async {
-                                      getRecipesNumber();
-                                      await Future.delayed(
-                                          const Duration(milliseconds: 200));
-                                      setState(() {
-                                        _showRecipesNumber = true;
-                                      });
-                                    },
-                                  );
-                                ;
-                              }),
+                                ),
+                              ).whenComplete(() async {
+                                getRecipesNumber();
+                                await Future.delayed(
+                                    const Duration(milliseconds: 200));
+                                setState(() {
+                                  _showRecipesNumber = true;
+                                });
+                              });
+                            },
+                          ),
                           CircularMenuItem(
                               icon: CustomIcons.food,
                               color: Colors.black,
@@ -715,31 +766,37 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     RouteManager.mySettings);
                               }),
                           CircularMenuItem(
-                              icon: CustomIcons.info,
-                              color: Colors.purple,
-                              iconSize: 4.h,
-                              onTap: () {
-                                setState(() {
-                                  _myTabController!.index == 0
-                                      ? _currentIndex = 0
-                                      : _currentIndex = 2;
-                                  hideFloatingActionButton = true;
-                                });
-                                AwesomeDialog(
-                                  width: 90.w,
-                                  isDense: true,
-                                  context: context,
-                                  customHeader: ClipOval(
-                                    child: Image.asset(
-                                      'assets/icons/DessertIcon.png',
-                                      width: 24.w,
-                                      height: 24.w,
+                            icon: CustomIcons.info,
+                            color: Colors.purple,
+                            iconSize: 4.h,
+                            onTap: () {
+                              setState(() {
+                                _myTabController!.index == 0
+                                    ? _currentIndex = 0
+                                    : _currentIndex = 2;
+                                hideFloatingActionButton = true;
+                              });
+
+                              showDialog(
+                                context: context,
+                                barrierDismissible: true,
+                                builder: (context) => AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25.0),
+                                  ),
+                                  titlePadding: EdgeInsets.only(top: 2.h),
+                                  title: Center(
+                                    child: ClipOval(
+                                      child: Image.asset(
+                                        'assets/icons/DessertIcon.png',
+                                        width: 24.w,
+                                        height: 24.w,
+                                      ),
                                     ),
                                   ),
-                                  animType: AnimType.topSlide,
-                                  body: Padding(
-                                    padding: EdgeInsets.only(top: 2.h),
+                                  content: SingleChildScrollView(
                                     child: Column(
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         TextFormField(
                                           readOnly: true,
@@ -779,49 +836,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
-                                          height: 4.h,
-                                        ),
-                                        // TextFormField(
-                                        //   readOnly: true,
-                                        //   autofocus: true,
-                                        //   maxLines: null,
-                                        //   textAlign: TextAlign.justify,
-                                        //   initialValue:
-                                        //       '${AppLocalizations.of(context)!.versionnumber}\n${AppLocalizations.of(context)!.releasedate}',
-                                        //   style: TextStyle(
-                                        //     fontSize: 15.sp,
-                                        //     fontWeight: FontWeight.bold,
-                                        //     height: 1.5,
-                                        //   ),
-                                        //   decoration: InputDecoration(
-                                        //     label: Text(
-                                        //       AppLocalizations.of(context)!
-                                        //           .version,
-                                        //       style: TextStyle(
-                                        //         color: Color.fromARGB(
-                                        //             255, 255, 6, 6),
-                                        //         fontWeight: FontWeight.bold,
-                                        //         fontSize: 18.sp,
-                                        //       ),
-                                        //     ),
-                                        //     focusedBorder: OutlineInputBorder(
-                                        //       borderSide: BorderSide(
-                                        //           color: Colors.black,
-                                        //           width: 2),
-                                        //       borderRadius:
-                                        //           BorderRadius.circular(30),
-                                        //     ),
-                                        //     border: OutlineInputBorder(
-                                        //       borderSide: BorderSide(),
-                                        //       borderRadius:
-                                        //           BorderRadius.circular(30),
-                                        //     ),
-                                        //   ),
-                                        // ),
-                                        // SizedBox(
-                                        //   height: 4.h,
-                                        // ),
+                                        SizedBox(height: 4.h),
                                         TextFormField(
                                           readOnly: true,
                                           autofocus: true,
@@ -859,24 +874,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
-                                          height: 4.h,
-                                        ),
+                                        SizedBox(height: 4.h),
                                       ],
                                     ),
                                   ),
-                                )..show().whenComplete(
-                                    () async {
-                                      getRecipesNumber();
-                                      await Future.delayed(
-                                          const Duration(milliseconds: 200));
-                                      setState(() {
-                                        _showRecipesNumber = true;
-                                      });
-                                    },
-                                  );
-                                ;
-                              })
+                                ),
+                              ).whenComplete(() async {
+                                getRecipesNumber();
+                                await Future.delayed(
+                                    const Duration(milliseconds: 200));
+                                setState(() {
+                                  _showRecipesNumber = true;
+                                });
+                              });
+                            },
+                          )
                         ],
                       ),
                 body: TabBarView(
